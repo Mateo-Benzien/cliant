@@ -9,9 +9,9 @@ height: 100vh;
 
 function App() {
   //Hooks
-  const [darkMode,setDarkMode] =useState(true)
+  const [darkMode, setDarkMode] =useState(true)
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>Podstream</Container>
     </ThemeProvider>
   
