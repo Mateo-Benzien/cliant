@@ -1,9 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const Favourite =() => {
-    return <div>
-        Favourite
+function Favourite() {
+  return (
+    <div>
+      <h1>Favourite Page</h1>
     </div>
-};
+  );
+}
 
 export default Favourite;
