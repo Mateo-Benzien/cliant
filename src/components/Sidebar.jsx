@@ -100,7 +100,7 @@ const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
     },
     {
       fun: () => setDarkMode(!darkMode),
-      name: "Light Mode",
+      name: darkMode?"Light Mode": "Dark Mode",
       icon: <LightModeRounded />,
     },
     {
@@ -109,7 +109,7 @@ const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
       icon: <LogoutRounded />,
     },
   ];
-  
+
   return (
     <MenuContainer>
       <Flex>
