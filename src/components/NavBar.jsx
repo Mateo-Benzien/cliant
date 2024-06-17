@@ -13,7 +13,6 @@ const NavbarDiv = styled.div`
   color: ${({ theme }) => theme.text_primary};
   gap: 30px;
   background: ${({ theme }) => theme.bg}
-    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.7px);
     -webkit-backdrop-filter: blur(5.7px);
@@ -27,15 +26,15 @@ const ButtonDiv = styled.div`
     align:
 `;
 
-const NavBar =() =>{
-    return <NavBarDiv>
+const Navbar =() =>{
+    return <NavbarDiv>
         <Menu/>
         <ButtonDiv>
             <PersonRounded/>
             Login
         </ButtonDiv>
-    </NavBarDiv>
+    </NavbarDiv>
 
 };
 
-export default NavBar;
+export default Navbar;

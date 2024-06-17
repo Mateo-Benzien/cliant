@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './utils/Themes.js';
 import Sidebar from './components/Sidebar';
-import Navbar from './src/components/Navbar.jsx';
+import Navbar from './components/Navbar'; 
 import { BrowserRouter } from 'react-router-dom';
 
 const Container = styled.div`
