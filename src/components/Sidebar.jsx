@@ -1,7 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { HomeRounded, CloseRounded } from "@mui/icons-material";
-import LogoImage from "../Images/Logo.png";
+import { 
+  HomeRounded, 
+  CloseRounded, 
+  SearchRounded, 
+  FavoriteRounded, 
+  UploadRounded, 
+  LightModeRounded, 
+  LogoutRounded 
+} from "@mui/icons-material";
+import LogoImage from "../images/Logo.png";
+import { Link } from "react-router-dom";
 
 const MenuContainer = styled.div`
   flex: 0.5;
@@ -14,21 +23,19 @@ const MenuContainer = styled.div`
 
 const Flex = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
+  padding: 16px;
 `;
 
 const Logo = styled.div`
   color: ${({ theme }) => theme.primary};
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
   font-weight: bold;
-  font-size: 20px; /* Removed extra space */
-  margin: 16px 0px;
+  font-size: 20px;
 `;
 
 const Image = styled.img`
@@ -36,10 +43,7 @@ const Image = styled.img`
 `;
 
 const Close = styled.div`
-  display: none;
-  @media (max-width: 1100px) {
-    display: block;
-  }
+  margin-left: 10px;
 `;
 
 const Elements = styled.div`
@@ -50,15 +54,59 @@ const Elements = styled.div`
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  color: ${({ theme }) => theme.text_primary};
-  width: 100%;
+  color: ${({ theme }) => theme.text_secondary};
+  text-decoration: none !important;
   &:hover {
-    background-color: ${({ theme }) => theme.text_secondary};
+    background-color: ${({ theme }) => theme.text_secondary + 50};
   }
 `;
 
+const menuItems = [
+  {
+    link: "/",
+    name: "Dashboard",
+    icon: <HomeRounded />,
+  },
+  {
+    link: "/search",
+    name: "Search",
+    icon: <SearchRounded />,
+  },
+  {
+    link: "/favourites",
+    name: "Favorites",
+    icon: <FavoriteRounded />,
+  },
+];
+
+const buttons = [
+  {
+    fun: () => console.log("Upload"),
+    name: "Upload",
+    icon: <UploadRounded />,
+  },
+  {
+    fun: () => console.log("Light Mode"),
+    name: "Light Mode",
+    icon: <LightModeRounded />,
+  },
+  {
+    fun: () => console.log("Log Out"),
+    name: "Log Out",
+    icon: <LogoutRounded />,
+  },
+];
+
 const NavText = styled.div`
   padding: 12px 0px;
+  text-decoration: none !important;
+`;
+
+const HR = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.text_secondary + 50};
+  margin: 10px 0px;
 `;
 
 const Sidebar = () => {
@@ -73,10 +121,21 @@ const Sidebar = () => {
           <CloseRounded />
         </Close>
       </Flex>
-      <Elements>
-        <HomeRounded />
-        <NavText>Dashboard</NavText>
-      </Elements>
+      {menuItems.map((item) => (
+        <Link key={item.link} to={item.link} style={{ textDecoration: "none" }}>
+          <Elements>
+            {item.icon}
+            <NavText>{item.name}</NavText>
+          </Elements>
+        </Link>
+      ))}
+      <HR />
+      {buttons.map((button, index) => (
+        <Elements key={index} onClick={button.fun}>
+          {button.icon}
+          <NavText>{button.name}</NavText>
+        </Elements>
+      ))}
     </MenuContainer>
   );
 };
