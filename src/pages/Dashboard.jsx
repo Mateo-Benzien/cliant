@@ -1,9 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+
+const DashboardMain =styled.div`
+
+`;
 
 const Dashboard =() => {
-    return <div>
-        Dashboard
-    </div>
+    return <DashboardMain>
+        <FilterContainer>
+            
+        </FilterContainer>
+    </DashboardMain>
 };
 
 export default Dashboard;
