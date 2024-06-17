@@ -7,7 +7,9 @@ import {
   FavoriteRounded, 
   UploadRounded, 
   LightModeRounded, 
-  LogoutRounded 
+  LogoutRounded, 
+  DarkModeRounded,
+  CloudUploadRounded
 } from "@mui/icons-material";
 import LogoImage from "../images/Logo.png";
 import { Link } from "react-router-dom";
@@ -19,23 +21,33 @@ const MenuContainer = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text_primary};
+  @media (max-width: 1100px) {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    max-width: 250px;
+    left: ${({ menuOpen }) => (menuOpen ? "0" : "-100%")};
+    transition: 0.3s ease-in-out;
+  }
 `;
 
 const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 16px;
+  width: 90%;
+  padding: 0px 12px;
 `;
 
 const Logo = styled.div`
   color: ${({ theme }) => theme.primary};
   display: flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 3px;
   font-weight: bold;
   font-size: 20px;
+  margin: 16px 0px
 `;
 
 const Image = styled.img`
@@ -43,7 +55,7 @@ const Image = styled.img`
 `;
 
 const Close = styled.div`
-  margin-left: 10px;
+  margin-left: 8px;
 `;
 
 const Elements = styled.div`
@@ -73,7 +85,7 @@ const HR = styled.div`
   margin: 10px 0px;
 `;
 
-const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
+const Sidebar = ({ menuOpen, setMenuOpen, setDarkMode, darkMode }) => {
   const menuItems = [
     {
       link: "/",
@@ -91,17 +103,17 @@ const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
       icon: <FavoriteRounded />,
     },
   ];
-  
+
   const buttons = [
     {
       fun: () => console.log("Upload"),
       name: "Upload",
-      icon: <UploadRounded />,
+      icon: <CloudUploadRounded/>,
     },
     {
       fun: () => setDarkMode(!darkMode),
-      name: darkMode?"Light Mode": "Dark Mode",
-      icon: <LightModeRounded />,
+      name: darkMode ? "Light Mode" : "Dark Mode",
+      icon: darkMode ? <LightModeRounded /> : <DarkModeRounded />,
     },
     {
       fun: () => console.log("Log Out"),
@@ -111,13 +123,13 @@ const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
   ];
 
   return (
-    <MenuContainer>
+    <MenuContainer menuOpen={menuOpen}>
       <Flex>
         <Logo>
           <Image src={LogoImage} />
-          Podstream
+          PodCasts
         </Logo>
-        <Close>
+        <Close onClick={() => setMenuOpen(false)}>
           <CloseRounded />
         </Close>
       </Flex>
@@ -130,8 +142,8 @@ const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
         </Link>
       ))}
       <HR />
-      {buttons.map((item) => (
-        <Elements onClick={ item.fun}>
+      {buttons.map((item, index) => (
+        <Elements key={index} onClick={item.fun}>
           {item.icon}
           <NavText>{item.name}</NavText>
         </Elements>

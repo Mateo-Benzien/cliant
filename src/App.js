@@ -22,12 +22,13 @@ const Frame =styled.div`
 function App() {
   //Hooks
   const [darkMode, setDarkMode] =useState(true)
-  const [menuOpen,setMenuOpen ] =useState(true)
+  const [menuOpen, setMenuOpen ] =useState(true)
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <BrowserRouter>
       <Container>
         <Sidebar 
+        menuOpen={menuOpen}
         setMenuOpen={setMenuOpen} 
         setDarkMode={setDarkMode}
          darkMode={darkMode}
