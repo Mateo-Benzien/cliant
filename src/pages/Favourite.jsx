@@ -1,11 +1,24 @@
+import { Topic } from '@mui/icons-material';
 import React from 'react';
+import PodcastCard from '../components/PodcastCard';
+import styled from 'styled-components';
 
-function Favourite() {
-  return (
-    <div>
-      <h1>Favourite Page</h1>
-    </div>
-  );
-}
+const Container = styled.div``;
+const Topic = styled.div``;
+const FavouriteContainer = styled.div``;
+
+const Favourite=() => {
+  return <Container>
+      <Topic>
+        Favourites
+      </Topic>
+      <FavouriteContainer>
+        <PodcastCard />
+        <PodcastCard />
+        <PodcastCard />
+      </FavouriteContainer>
+    </Container>
+ };
+
 
 export default Favourite;

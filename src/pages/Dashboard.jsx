@@ -47,7 +47,7 @@ font-size: 14px;
 
 const Podcast = styled.div`
 display: flex;
-flexwrap: wrap;
+flex-wrap: wrap;
 gap: 14px;
 paddig: 18px 16px;
 @media (max-width: 550px) {
