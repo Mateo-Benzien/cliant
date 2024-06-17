@@ -45,7 +45,15 @@ font-size: 14px;
 }
 `;
 
-const Podcast = styled.div``;
+const Podcast = styled.div`
+display: flex;
+flexwrap: wrap;
+gap: 14px;
+paddig: 18px 16px;
+@media (max-width: 550px) {
+justify-content: center;
+}
+`;
 
 const Dashboard =() => {
     return <DashboardMain>
