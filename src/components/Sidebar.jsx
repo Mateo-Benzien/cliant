@@ -61,42 +61,6 @@ const Elements = styled.div`
   }
 `;
 
-const menuItems = [
-  {
-    link: "/",
-    name: "Dashboard",
-    icon: <HomeRounded />,
-  },
-  {
-    link: "/search",
-    name: "Search",
-    icon: <SearchRounded />,
-  },
-  {
-    link: "/favourites",
-    name: "Favorites",
-    icon: <FavoriteRounded />,
-  },
-];
-
-const buttons = [
-  {
-    fun: () => console.log("Upload"),
-    name: "Upload",
-    icon: <UploadRounded />,
-  },
-  {
-    fun: () => console.log("Light Mode"),
-    name: "Light Mode",
-    icon: <LightModeRounded />,
-  },
-  {
-    fun: () => console.log("Log Out"),
-    name: "Log Out",
-    icon: <LogoutRounded />,
-  },
-];
-
 const NavText = styled.div`
   padding: 12px 0px;
   text-decoration: none !important;
@@ -109,7 +73,43 @@ const HR = styled.div`
   margin: 10px 0px;
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ setMenuOpen, setDarkMode, darkMode}) => {
+  const menuItems = [
+    {
+      link: "/",
+      name: "Dashboard",
+      icon: <HomeRounded />,
+    },
+    {
+      link: "/search",
+      name: "Search",
+      icon: <SearchRounded />,
+    },
+    {
+      link: "/favourites",
+      name: "Favorites",
+      icon: <FavoriteRounded />,
+    },
+  ];
+  
+  const buttons = [
+    {
+      fun: () => console.log("Upload"),
+      name: "Upload",
+      icon: <UploadRounded />,
+    },
+    {
+      fun: () => setDarkMode(!darkMode),
+      name: "Light Mode",
+      icon: <LightModeRounded />,
+    },
+    {
+      fun: () => console.log("Log Out"),
+      name: "Log Out",
+      icon: <LogoutRounded />,
+    },
+  ];
+  
   return (
     <MenuContainer>
       <Flex>
@@ -130,10 +130,10 @@ const Sidebar = () => {
         </Link>
       ))}
       <HR />
-      {buttons.map((button, index) => (
-        <Elements key={index} onClick={button.fun}>
-          {button.icon}
-          <NavText>{button.name}</NavText>
+      {buttons.map((item) => (
+        <Elements onClick={ item.fun}>
+          {item.icon}
+          <NavText>{item.name}</NavText>
         </Elements>
       ))}
     </MenuContainer>
