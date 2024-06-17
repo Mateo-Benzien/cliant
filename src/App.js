@@ -28,12 +28,14 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <BrowserRouter>
         <Container>
+          {menuOpen &&(
           <Sidebar
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}
             setDarkMode={setDarkMode}
             darkMode={darkMode}
           />
+         )} 
           <Frame>
             <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             Podstream
