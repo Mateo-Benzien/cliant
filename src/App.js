@@ -3,7 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './utils/Themes.js';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar.jsx'; 
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard.jsx';
 
 const Container = styled.div`
   display: flex;
@@ -38,7 +39,9 @@ function App() {
          )} 
           <Frame>
             <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            Podstream
+            <Routes>
+              <Route path="/" exact element={<Dashboard />}/>
+            </Routes>
           </Frame>
         </Container>
       </BrowserRouter>
