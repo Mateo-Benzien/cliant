@@ -69,6 +69,8 @@ const Dashboard =() => {
                 <PodcastCard />
                 <PodcastCard />
                 <PodcastCard />
+                <PodcastCard />
+                <PodcastCard />
 
             </Podcast>
         </FilterContainer>
@@ -84,9 +86,175 @@ const Dashboard =() => {
 
             <PodcastCard />
             <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            Personal Growth
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
 
             </Podcast>
         </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            Investigative Journalism
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            
+
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            History
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            Entertainment
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            
+
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            Business
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            Fiction
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            News
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            
+
+            </Podcast>
+        </FilterContainer>
+
+        <FilterContainer>
+            <Topic>
+            Kids and Family
+            <Link to={`/showpodcasts/comedy`} style={{textDecoration: "none"}}>
+            <Span>Show All</Span>
+            </Link>
+            </Topic>
+            <Podcast>
+
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            <PodcastCard />
+            
+
+            </Podcast>
+        </FilterContainer>
+
     </DashboardMain>
 };
 
